@@ -84,13 +84,11 @@ def load_vgg_model(path):
         """
         Return the weights and bias from the VGG model for a given layer.
         """
-        wb = vgg_layers[0][layer][0][0][2]
+        wb = vgg_layers[0][layer][0][0][0]
         W = wb[0][0]
         b = wb[0][1]
-        layer_name = vgg_layers[0][layer][0][0][0][0]
+        layer_name = vgg_layers[0][layer][0][0][3]
         assert layer_name == expected_layer_name
-        return W, b
-
         return W, b
 
     def _relu(conv2d_layer):
